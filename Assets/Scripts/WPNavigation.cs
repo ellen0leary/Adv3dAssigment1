@@ -10,7 +10,10 @@ public class WPNavigation : MonoBehaviour
     int WPIndex;
     string thisTag;
     Animator anim;
+    AnimatorStateInfo info;
     public bool ifSet = false;
+    GameObject player;
+    int numWPReached =0;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,7 @@ public class WPNavigation : MonoBehaviour
         thisTag =this.gameObject.tag;
         anim = GetComponent<Animator>();
         target = WPs[WPIndex];
+        player = GameObject.Find("player");
     }
 
     void MoveToNextWP()
@@ -45,17 +49,71 @@ public class WPNavigation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        info = anim.GetCurrentAnimatorStateInfo(0);
+        if(info.IsName("Patrol")){
             if ((Vector3.Distance(transform.position, target.transform.position) < 2.0f) && ifSet)
             {
             MoveToNextWP();
             target = WPs[WPIndex];
+            numWPReached++;
+            if (numWPReached >= 4)
+            {
+                numWPReached = 0;
+                anim.SetTrigger("startBackToStart");
+            }
             }
             else if( (Vector3.Distance(transform.position, target.transform.position) < 2.0f) && !ifSet )
             {
             MoveToRandomWP();
             target = WPs[WPIndex];
+            numWPReached++;
+            if (numWPReached >= 4)
+            {
+                numWPReached = 0;
+                anim.SetTrigger("startBackToStart");
+            }
           }
         GetComponent<NavMeshAgent>().SetDestination(WPs[WPIndex].transform.position);
+        }
+        if(info.IsName("FollowPlayer")){
+            target = player;
+            GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+        }
         
+    }
+
+
+    void look(){
+        Ray ray = new Ray();
+        RaycastHit hit;
+        ray.origin = transform.position + Vector3.up * 0.7f;
+        string objInSight = "";
+        float castingDistance = 20;
+        ray.direction = transform.forward * castingDistance;
+        Debug.DrawRay(ray.origin, ray.direction * castingDistance, Color.red);
+        if(Physics.Raycast(ray.origin, ray.direction, out hit, castingDistance)){
+            objInSight = hit.collider.gameObject.name;
+            if(objInSight=="player") anim.SetBool("canSeePlayer", true);
+            else anim.SetBool("canSeePlayer", false);
+        }
+    }
+    void listen(){
+        float distance = Vector3.Distance(transform.position, player.transform.position);
+        if(distance < 3) anim.SetBool("canHearPlayer", true);
+        else anim.SetBool("canHearPlayer", false);
+    }
+
+    void smell() {
+        GameObject[] allBCs = GameObject.FindGameObjectsWithTag("BC");
+        float minDistance = 2;
+        bool dectectBC = false;
+        for( int i=0; i<allBCs.Length; i++){
+            if(Vector3.Distance(transform.position, allBCs[i].transform.position)<minDistance){
+                dectectBC =true;
+                break;
+            }
+        }
+        if(dectectBC)anim.SetBool("canSmellPlayer", true);
+        else anim.SetBool("canSmell", false);
     }
 }
