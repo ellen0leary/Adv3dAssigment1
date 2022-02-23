@@ -51,6 +51,12 @@ public class WPNavigation : MonoBehaviour
     void Update()
     {
         info = anim.GetCurrentAnimatorStateInfo(0);
+        if (info.IsName("Dies"))
+        {
+            GetComponent<NavMeshAgent>().isStopped = true;
+            Destroy(gameObject, 3);
+            return;
+        }
         smell();
         look();
         listen();
