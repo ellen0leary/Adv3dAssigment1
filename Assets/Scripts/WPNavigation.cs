@@ -15,6 +15,8 @@ public class WPNavigation : MonoBehaviour
     GameObject player;
     int numWPReached =0;
     float patrolTimer =0;
+    float shootTimer = 0;
+    float shootingTimer = 0;
     // Start is called before the first frame update
     void Start()
     {
@@ -93,9 +95,29 @@ public class WPNavigation : MonoBehaviour
                 anim.SetTrigger("startBackToStart");
             }
           }
+          
         GetComponent<NavMeshAgent>().SetDestination(WPs[WPIndex].transform.position);
         }
+        if (info.IsName("Shoots"))
+        {
+            shootingTimer +=Time.deltaTime;
+            GetComponent<NavMeshAgent>().isStopped = true;
+            if(shootingTimer > 1){
+            anim.SetBool("startToShoot",false);
+            GetComponent<NavMeshAgent>().isStopped = true;
+            }
+        }
         if(info.IsName("FollowPlayer")){
+            shootTimer += Time.deltaTime;
+            
+            if(shootTimer>3){
+                if(anim.GetBool("canSeePlayer") && GetComponent<AmmoController>().getAmmo()>0) {
+                    anim.SetBool("startToShoot",true);
+                    print("shooting");
+                    shootTimer =0;
+                    GetComponent<AmmoController>().decreaseAmmo();
+                }
+            }
             target = player;
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
         }
