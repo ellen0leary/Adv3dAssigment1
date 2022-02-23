@@ -14,6 +14,7 @@ public class WPNavigation : MonoBehaviour
     public bool ifSet = false;
     GameObject player;
     int numWPReached =0;
+    float patrolTimer =0;
     // Start is called before the first frame update
     void Start()
     {
@@ -50,6 +51,19 @@ public class WPNavigation : MonoBehaviour
     void Update()
     {
         info = anim.GetCurrentAnimatorStateInfo(0);
+        smell();
+        look();
+        listen();
+
+        if (info.IsName("Idle"))
+        {
+            patrolTimer += Time.deltaTime;
+            if (patrolTimer > 1)
+            {
+                patrolTimer = 0;
+                anim.SetBool("IsPatroling",true);
+            }
+        }
         if(info.IsName("Patrol")){
             if ((Vector3.Distance(transform.position, target.transform.position) < 2.0f) && ifSet)
             {
@@ -99,7 +113,7 @@ public class WPNavigation : MonoBehaviour
     }
     void listen(){
         float distance = Vector3.Distance(transform.position, player.transform.position);
-        if(distance < 3) anim.SetBool("canHearPlayer", true);
+        if(distance < 3f) anim.SetBool("canHearPlayer", true);
         else anim.SetBool("canHearPlayer", false);
     }
 
