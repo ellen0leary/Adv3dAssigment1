@@ -59,6 +59,8 @@ public class WPNavigation : MonoBehaviour
             Destroy(gameObject, 3);
             return;
         }
+        int ammos = GetComponent<AmmoController>().getAmmo();
+        anim.SetInteger("Ammo", ammos);
         smell();
         look();
         listen();
@@ -107,27 +109,32 @@ public class WPNavigation : MonoBehaviour
         if (info.IsName("Shoots"))
         {
             shootingTimer +=Time.deltaTime;
-            GetComponent<NavMeshAgent>().isStopped = true;
-            if(shootingTimer > 1){
-            anim.SetBool("startToShoot",false);
-            GetComponent<NavMeshAgent>().isStopped = true;
-            }
+            // GetComponent<NavMeshAgent>().isStopped = true;
+            print("shooting now");
+            
         }
         if(info.IsName("FollowPlayer")){
             shootTimer += Time.deltaTime;
             
             if(shootTimer>3){
-                if(anim.GetBool("canSeePlayer") && GetComponent<AmmoController>().getAmmo()>0) {
-                    anim.SetBool("startToShoot",true);
+                if(/*anim.GetBool("canSeePlayer") &&*/ GetComponent<AmmoController>().getAmmo()>0) {
+                    anim.SetTrigger("startToShoot");
                     print("shooting");
                     shootTimer =0;
-                    GetComponent<AmmoController>().decreaseAmmo();
                 }
             }
             target = player;
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
         }
-        
+        if (info.IsName("LookForAmmo"))
+        {
+            target = GameObject.Find("AmmoPack");
+            GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+            if (Vector3.Distance(transform.position, target.transform.position) < 2)
+            {
+                GetComponent<NPCAmmo>().setAmmo(100);
+            }
+        }
     }
 
 

@@ -53,6 +53,8 @@ public class Type2 : MonoBehaviour
             Destroy(gameObject, 3);
             return;
         }
+        int ammos = GetComponent<AmmoController>().getAmmo();
+        anim.SetInteger("Ammo", ammos);
         smell();
         look();
         listen();
@@ -91,12 +93,10 @@ public class Type2 : MonoBehaviour
         if (info.IsName("Shoots"))
         {
             shootingTimer += Time.deltaTime;
-            GetComponent<NavMeshAgent>().isStopped = true;
-            if (shootingTimer > 1)
-            {
-                anim.SetBool("startToShoot", false);
-                GetComponent<NavMeshAgent>().isStopped = true;
-            }
+            // GetComponent<NavMeshAgent>().isStopped = true;
+            print("shooting now");
+            GetComponent<AmmoController>().decreaseAmmo();
+
         }
         if (info.IsName("FollowPlayer"))
         {
@@ -104,18 +104,17 @@ public class Type2 : MonoBehaviour
 
             if (shootTimer > 3)
             {
-                if (anim.GetBool("canSeePlayer") && GetComponent<AmmoController>().getAmmo() > 0)
+                if (/*anim.GetBool("canSeePlayer") &&*/ GetComponent<AmmoController>().getAmmo() > 0)
                 {
-                    anim.SetBool("startToShoot", true);
+                    anim.SetTrigger("startToShoot");
                     print("shooting");
                     shootTimer = 0;
-                    GetComponent<AmmoController>().decreaseAmmo();
                 }
             }
             target = player;
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
         }
-        else if (info.IsName("LookForHealth"))
+        if (info.IsName("LookForHealth"))
         {
             target = GameObject.Find("HealthPack");
             print("looking for health");
@@ -123,6 +122,16 @@ public class Type2 : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) < 2)
             {
                 GetComponent<NPCHealth>().setHealth(100);
+            }
+        }
+
+        if (info.IsName("LookForAmmo"))
+        {
+            target = GameObject.Find("AmmoPack");
+            GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+            if (Vector3.Distance(transform.position, target.transform.position) < 2)
+            {
+                GetComponent<AmmoController>().setAmmo(100);
             }
         }
 

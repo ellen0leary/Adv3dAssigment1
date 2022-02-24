@@ -8,6 +8,7 @@ public class AmmoController : MonoBehaviour
     // Start is called before the first frame update
     public void decreaseAmmo(){
         ammo -= 40;
+        print(ammo.ToString());
         if(ammo <=0) ammo = 0;
     }
 

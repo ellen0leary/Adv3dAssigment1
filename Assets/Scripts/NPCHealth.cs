@@ -15,7 +15,7 @@ public class NPCHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setHealth(health - Time.deltaTime * 10);
+        setHealth(health - Time.deltaTime * 1);
         // print(health);
         if (health < 0) {
             GetComponent<NavMeshAgent>().isStopped = true;
