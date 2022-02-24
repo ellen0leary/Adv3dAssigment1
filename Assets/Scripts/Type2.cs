@@ -116,7 +116,10 @@ public class Type2 : MonoBehaviour
         }
         if (info.IsName("LookForHealth"))
         {
-            target = GameObject.Find("HealthPack");
+            target = LookForHealth();
+            if(target == null){
+                return;
+            }
             print("looking for health");
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
             if (Vector3.Distance(transform.position, target.transform.position) < 2)
@@ -127,7 +130,11 @@ public class Type2 : MonoBehaviour
 
         if (info.IsName("LookForAmmo"))
         {
-            target = GameObject.Find("AmmoPack");
+            target = LookForAmmo();
+            if (target == null)
+            {
+                return;
+            }
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
             if (Vector3.Distance(transform.position, target.transform.position) < 2)
             {
@@ -176,5 +183,51 @@ public class Type2 : MonoBehaviour
         }
         if (dectectBC) anim.SetBool("canSmellPlayer", true);
         else anim.SetBool("canSmell", false);
+    }
+
+    GameObject LookForAmmo(){
+        GameObject[] gs = GameObject.FindGameObjectsWithTag("ammo");
+        if(gs.Length==1){
+            return gs[0];
+        }else if(gs.Length>0){
+            GameObject returnValue = new GameObject();
+            float distance = Vector3.Distance(transform.position,gs[0].transform.position);
+            foreach(GameObject j in gs){
+                if(Vector3.Distance(transform.position, j.transform.position)< distance){
+                    returnValue = j;
+                    distance = Vector3.Distance(transform.position, j.transform.position);
+                }
+            }
+            return returnValue;
+        } else{
+            return null;
+        }
+    }
+
+    GameObject LookForHealth()
+    {
+        GameObject[] gs = GameObject.FindGameObjectsWithTag("health");
+        if (gs.Length == 1)
+        {
+            return gs[0];
+        }
+        else if (gs.Length > 0)
+        {
+            GameObject returnValue = new GameObject();
+            float distance = Vector3.Distance(transform.position, gs[0].transform.position);
+            foreach (GameObject j in gs)
+            {
+                if (Vector3.Distance(transform.position, j.transform.position) < distance)
+                {
+                    returnValue = j;
+                    distance = Vector3.Distance(transform.position, j.transform.position);
+                }
+            }
+            return returnValue;
+        }
+        else
+        {
+            return null;
+        }
     }
 }
