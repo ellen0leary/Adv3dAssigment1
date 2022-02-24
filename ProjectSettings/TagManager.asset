@@ -7,6 +7,8 @@ TagManager:
   - Fire
   - set
   - BC
+  - health
+  - ammo
   layers:
   - Default
   - TransparentFX
