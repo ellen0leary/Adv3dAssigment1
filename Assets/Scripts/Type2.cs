@@ -118,7 +118,12 @@ public class Type2 : MonoBehaviour
         {
             target = LookForHealth();
             if(target == null){
-                return;
+                //no health packs
+                if(Vector3.Distance(transform.position, player.transform.position)>5f){
+                Vector3 dir = transform.position - player.transform.position;
+                Vector3 newPos = transform.position+dir;
+                GetComponent<NavMeshAgent>().SetDestination(newPos);
+                }
             }
             print("looking for health");
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
