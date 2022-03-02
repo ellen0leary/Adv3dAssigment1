@@ -41,11 +41,8 @@ public class Type3 : MonoBehaviour
             if (target == null)
             {
                 //no health packs
-                if (Vector3.Distance(transform.position, player.transform.position) > 5f)
-                {
-                    Vector3 dir = transform.position - player.transform.position;
-                    Vector3 newPos = transform.position + dir;
-                    GetComponent<NavMeshAgent>().SetDestination(newPos);
+                if(GetComponent<AmmoController>().getAmmo()> 80){
+                    anim.SetBool("ifHealthAbv",false);
                 }
             }
             print("looking for health");
