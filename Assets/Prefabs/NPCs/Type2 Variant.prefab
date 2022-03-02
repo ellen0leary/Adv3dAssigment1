@@ -53,7 +53,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 82cece5aa309cfb4aaf7f1a7262b08e8, type: 3}
       propertyPath: m_Name
-      value: Type2 Variant
+      value: Type2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82cece5aa309cfb4aaf7f1a7262b08e8, type: 3}
@@ -93,20 +93,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42687bfd2975e124b8da9dd99b7ac708, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1352056141
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2852241080910229282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f544e4b310decb941bf6a445782779c7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  ifSet: 0
 --- !u!195 &1352056142
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -155,15 +141,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   ifSet: 0
---- !u!114 &496316373730508025
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2852241080910229282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 18aaf8baceeec064a8be6a80656e05f6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

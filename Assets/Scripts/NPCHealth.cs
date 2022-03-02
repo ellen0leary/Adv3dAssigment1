@@ -16,6 +16,7 @@ public class NPCHealth : MonoBehaviour
     void Update()
     {
         setHealth(health - Time.deltaTime * 0.1f);
+        anim.SetFloat("Health", health);
         // print(health);
         if (health < 0) {
             GetComponent<NavMeshAgent>().isStopped = true;

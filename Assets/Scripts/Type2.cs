@@ -138,7 +138,7 @@ public class Type2 : MonoBehaviour
             target = LookForAmmo();
             if (target == null)
             {
-                return; // ToDo - idk
+                return;
             }
             GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
             if (Vector3.Distance(transform.position, target.transform.position) < 2)

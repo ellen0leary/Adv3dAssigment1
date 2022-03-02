@@ -94,16 +94,16 @@ AnimatorStateMachine:
     m_Position: {x: -60, y: -200, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -2239742298378110555}
-    m_Position: {x: -50, y: 100, z: 0}
+    m_Position: {x: -360, y: 60, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 592961939701390285}
     m_Position: {x: 220, y: -110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8516498491554798160}
-    m_Position: {x: -370, y: 30, z: 0}
+    m_Position: {x: -610, y: 40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4114169138279764619}
-    m_Position: {x: -510, y: -80, z: 0}
+    m_Position: {x: -220, y: -60, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -3488971698224992186}
@@ -321,43 +321,43 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: canSeePlayer
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: canHearPlayer
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: canSmellPlayer
     m_Type: 4
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Health
     m_Type: 1
     m_DefaultFloat: 30
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: Ammo
     m_Type: 3
     m_DefaultFloat: 0
     m_DefaultInt: 100
     m_DefaultBool: 0
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   - m_Name: startToShoot
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 1
-    m_Controller: {fileID: 0}
+    m_Controller: {fileID: 9100000}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
