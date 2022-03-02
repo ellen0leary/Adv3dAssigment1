@@ -15,7 +15,7 @@ public class NPCHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        setHealth(health - Time.deltaTime * 0.1f);
+        setHealth(health - Time.deltaTime * 10f);
         anim.SetFloat("Health", health);
         // print(health);
         if (health < 0) {
