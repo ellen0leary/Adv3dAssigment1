@@ -603,6 +603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1954280180}
   - component: {fileID: 1954280179}
+  - component: {fileID: 1954280181}
   m_Layer: 0
   m_Name: AmbushArea
   m_TagString: Untagged
@@ -637,6 +638,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1954280181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954280178}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a0931d8e5f0012d4a90b2bb0ad5b76b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1969154253
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -842,7 +855,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5358212849244697773, guid: cf0ef10792fe6af47bc6c8f00ef06f70, type: 3}
       propertyPath: m_Name
-      value: Type 4
+      value: Type4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cf0ef10792fe6af47bc6c8f00ef06f70, type: 3}

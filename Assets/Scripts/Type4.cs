@@ -33,15 +33,14 @@ public class Type4 : MonoBehaviour
             newPos = transform.position -minimuDistanceBetweenThem*  dir;
             GetComponent<NavMeshAgent>().SetDestination(newPos);
         }
-        // if(info.IsName("goToAmbush")){
-        //     //set destination
-        //     target = ambushPoint;
-        //     GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
-        //     if(Vector3.Distance(transform.position, target.transform.position)>3f){
-        //         anim.SetTrigger("ThrowGrande");
-        //     }
-
-        // }
+        if(info.IsName("GoToAmbush")){
+            //set destination
+            target = ambushPoint;
+            GetComponent<NavMeshAgent>().SetDestination(target.transform.position);
+            if(Vector3.Distance(transform.position, target.transform.position)<3f){
+                anim.SetTrigger("ThrowGrande");
+            }
+        }
         // if(info.IsName("ThrowGrande")){
 
         // }
