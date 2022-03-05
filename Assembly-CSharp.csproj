@@ -40,14 +40,17 @@
      <Compile Include="Assets\Scripts\Type4.cs" />
      <Compile Include="Assets\Scripts\Type2.cs" />
      <Compile Include="Assets\Scripts\NPCHealth.cs" />
+     <Compile Include="Assets\Scripts\Grande.cs" />
+     <Compile Include="Assets\Scripts\controlGranade.cs" />
      <Compile Include="Assets\Scripts\BreadCrumb.cs" />
      <Compile Include="Assets\Scripts\Trigger.cs" />
      <Compile Include="Assets\Scripts\BC.cs" />
      <Compile Include="Assets\Scripts\NPCAmmo.cs" />
      <Compile Include="Assets\Scripts\AmmoController.cs" />
      <Compile Include="Assets\Scripts\WPNavigation.cs" />
-     <Compile Include="Assets\Scripts\controlGranade.cs" />
-     <Compile Include="Assets\Scripts\Grande.cs" />
+     <Compile Include="Assets\Scripts\Leader.cs" />
+     <Compile Include="Assets\Scripts\TeamMember.cs" />
+     <Compile Include="Assets\Scripts\NPC.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
