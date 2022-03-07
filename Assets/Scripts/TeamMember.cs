@@ -9,7 +9,7 @@ public class TeamMember : MonoBehaviour
     Animator anim;
     AnimatorStateInfo info;
     float distanceToLeader;
-    GameObject target;
+    public GameObject target;
     float distanceToTarget;
     // Start is called before the first frame update
     void Start()
@@ -24,20 +24,24 @@ public class TeamMember : MonoBehaviour
     {
         info = anim.GetCurrentAnimatorStateInfo(0);
         distanceToLeader = Vector3.Distance(leader.transform.position, transform.position);
-        if (distanceToLeader < 5.0f)
+        if (distanceToLeader < 3.0f)
         {
+            print("close to leader");
             anim.SetBool("closeToLeader", true);
+            GetComponent<NavMeshAgent>().isStopped = true;
+            GetComponent<NavMeshAgent>().SetDestination(transform.position);
         }
         else
         {
             anim.SetBool("closeToLeader", false);
+            print("not close to leader");
         }
 
         if (info.IsName("idle"))
         {
             GetComponent<NavMeshAgent>().isStopped = true;
         }
-        if (info.IsName("MoveTowardsLearder"))
+        if (info.IsName("MoveTowardsLeader"))
         {
             GetComponent<NavMeshAgent>().SetDestination(leader.transform.position);
             GetComponent<NavMeshAgent>().isStopped = false;

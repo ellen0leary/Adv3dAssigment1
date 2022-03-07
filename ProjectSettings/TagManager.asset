@@ -9,6 +9,7 @@ TagManager:
   - BC
   - health
   - ammo
+  - teamMember
   layers:
   - Default
   - TransparentFX
