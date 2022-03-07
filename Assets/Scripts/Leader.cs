@@ -34,8 +34,11 @@ public class Leader : MonoBehaviour
     {
         if (gameObject.name == "TeamLeader") allTargets = GameObject.FindGameObjectsWithTag("teamMember");
         else allTargets = GameObject.FindGameObjectsWithTag("team2");
+        print("gotten " + allTargets.Length.ToString()+ " to targets");
+        nbTargets = allTargets.Length;
         for (int i = 0; i < nbTargets; i++)
         {
+            print("attacking " + i.ToString() + " Index");
             teamMembers[i].GetComponent<TeamMember>().attack(allTargets[i]);
         }
     }
@@ -46,10 +49,12 @@ public class Leader : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.P))
             {
+                print("attacking");
                 attack();
             }
             if (Input.GetKeyDown(KeyCode.O))
             {
+                print("retreating");
                 retreat();
             }
         }

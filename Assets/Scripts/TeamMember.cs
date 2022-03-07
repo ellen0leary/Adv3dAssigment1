@@ -89,6 +89,7 @@ public class TeamMember : MonoBehaviour
     public void attack(GameObject t)
     {
         target = t;
+        print(target.name.ToString());
         anim.SetTrigger("respondToAttack");
     }
 
