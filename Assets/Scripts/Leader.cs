@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class Leader : MonoBehaviour
 {
+    public Vector3 target;
     GameObject[] teamMembers;
     GameObject[] allTargets;
     int nbTeamMembers, nbTargets;
@@ -25,8 +26,8 @@ public class Leader : MonoBehaviour
         if (gameObject.name == "player") teamMembers = GameObject.FindGameObjectsWithTag("teamMember");
         else teamMembers = GameObject.FindGameObjectsWithTag("team2");
         nbTeamMembers = teamMembers.Length;
-        allTargets = GameObject.FindGameObjectsWithTag("target");
-        nbTargets = allTargets.Length;
+        // allTargets = GameObject.FindGameObjectsWithTag("target");
+        // nbTargets = allTargets.Length;
         player = GameObject.Find("player");
     }
 
@@ -72,12 +73,15 @@ public class Leader : MonoBehaviour
             }
             if (info.IsName("Patrol"))
             {
+                print("patrol");
                 detectEmemies();
                 if (Vector3.Distance(transform.position, WPs[WPIndex].transform.position) < 1.0f)
                 {
                     WPIndex++;
                     if (WPIndex > 3) WPIndex = 0;
                 }
+                target = WPs[WPIndex].transform.position;
+                print(transform.position + " - "  +WPs[WPIndex].transform.position );
                 GetComponent<NavMeshAgent>().SetDestination(WPs[WPIndex].transform.position);
                 GetComponent<NavMeshAgent>().isStopped = false;
             }
