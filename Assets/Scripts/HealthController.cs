@@ -24,4 +24,8 @@ public class HealthController : MonoBehaviour
             currentPacks++;
         }
     }
+
+    public void removePack(){
+        currentPacks--;
+    }
 }

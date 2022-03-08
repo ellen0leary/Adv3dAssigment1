@@ -120,9 +120,9 @@ public class Type2 : MonoBehaviour
             if(target == null){
                 //no health packs
                 if(Vector3.Distance(transform.position, player.transform.position)>5f){
-                Vector3 dir = transform.position - player.transform.position;
-                Vector3 newPos = transform.position+dir;
-                GetComponent<NavMeshAgent>().SetDestination(newPos);
+                    Vector3 dir = transform.position - player.transform.position;
+                    Vector3 newPos = transform.position+dir;
+                    GetComponent<NavMeshAgent>().SetDestination(newPos);
                 }
             }
             print("looking for health");
@@ -130,6 +130,8 @@ public class Type2 : MonoBehaviour
             if (Vector3.Distance(transform.position, target.transform.position) < 2)
             {
                 GetComponent<NPCHealth>().setHealth(100);
+                Destroy(target);
+                GameObject.Find("WPs").GetComponent<HealthController>().removePack();
             }
         }
 
