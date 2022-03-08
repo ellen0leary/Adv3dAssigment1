@@ -96,6 +96,25 @@ CapsuleCollider:
   m_Height: 1.8475863
   m_Direction: 1
   m_Center: {x: -0.0029878616, y: 0.87848204, z: 0}
+--- !u!95 &4969768872207822214
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966691177139425356}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 61cdbae2f4cb4f74b9f075a32aa6e181, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!195 &3939372573379297846
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -130,22 +149,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 88bd7d97ff8c99b47ba9a1d2cf0edf2b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!95 &4969768872207822214
-Animator:
-  serializedVersion: 3
+  target: {fileID: 0}
+--- !u!136 &5970061786029022302
+CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3966691177139425356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
   m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 61cdbae2f4cb4f74b9f075a32aa6e181, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_Radius: 0.27946037
+  m_Height: 1.7915378
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87187886, z: 0.036415756}

@@ -65,12 +65,6 @@ public class WPNavigation : MonoBehaviour
         look();
         listen();
 
-        float distance = Vector3.Distance(transform.position, player.transform.position);
-        if (distance < 1.5)
-        {
-            print("game over");
-            return;
-        }
         if (info.IsName("Idle"))
         {
             patrolTimer += Time.deltaTime;
