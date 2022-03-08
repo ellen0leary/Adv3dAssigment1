@@ -10,8 +10,8 @@ public class PlayerCollider : MonoBehaviour
             Destroy(other.gameObject);
             GameObject.Find("HPs").GetComponent<HealthController>().removePack();
         } else if (other.gameObject.tag == "coll"){
-            //get score controller
-            //score up by one
+            Destroy(other.gameObject);
+            GameObject.Find("ScoreController").GetComponent<ScoreController>().updateScore();
         } else if(other.gameObject.tag== "ammo"){
             GetComponent<AmmoController>().setAmmo(100);
             Destroy(other.gameObject);

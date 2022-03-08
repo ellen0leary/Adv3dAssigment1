@@ -54,9 +54,10 @@
      <Compile Include="Assets\Scripts\CollisionCheck.cs" />
      <Compile Include="Assets\Scripts\NPCAmmo.cs" />
      <Compile Include="Assets\Scripts\AmmoController.cs" />
+     <Compile Include="Assets\Scripts\PlayerCollider.cs" />
      <Compile Include="Assets\Scripts\WPNavigation.cs" />
      <Compile Include="Assets\Scripts\EmeniesController.cs" />
-     <Compile Include="Assets\Scripts\PlayerCollider.cs" />
+     <Compile Include="Assets\Scripts\ScoreController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>

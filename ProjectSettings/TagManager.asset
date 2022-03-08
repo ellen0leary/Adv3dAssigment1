@@ -11,6 +11,7 @@ TagManager:
   - ammo
   - teamMember
   - team2
+  - coll
   layers:
   - Default
   - TransparentFX
