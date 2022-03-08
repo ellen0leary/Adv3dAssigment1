@@ -98,6 +98,8 @@ public class Leader : MonoBehaviour
 
     void detectEmemies()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > 10f) anim.SetTrigger("closeToEmeny");
+        if (Vector3.Distance(transform.position, player.transform.position) > 10f){ 
+            anim.SetTrigger("closeToEmeny");
+        }
     }
 }
