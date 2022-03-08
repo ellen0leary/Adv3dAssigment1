@@ -35,6 +35,7 @@ public class WPNavigation : MonoBehaviour
     void MoveToNextWP()
      {
          WPIndex++;
+         print(WPIndex);
          if (WPIndex > WPs.Length - 1) WPIndex = 0;
      }
 
@@ -86,17 +87,6 @@ public class WPNavigation : MonoBehaviour
                 anim.SetTrigger("startBackToStart");
             }
             }
-            else if( (Vector3.Distance(transform.position, target.transform.position) < 2.0f) && !ifSet )
-            {
-            MoveToRandomWP();
-            target = WPs[WPIndex];
-            numWPReached++;
-            if (numWPReached >= 4)
-            {
-                numWPReached = 0;
-                anim.SetTrigger("startBackToStart");
-            }
-          }
           
         GetComponent<NavMeshAgent>().SetDestination(WPs[WPIndex].transform.position);
         }

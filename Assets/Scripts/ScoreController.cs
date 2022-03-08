@@ -30,6 +30,7 @@ public class ScoreController : MonoBehaviour
 
     public void updateScore(){
         score++;
-        print("score");
+        print(score);
+        //add to canvas
     }
 }

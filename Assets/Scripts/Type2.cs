@@ -131,7 +131,7 @@ public class Type2 : MonoBehaviour
             {
                 GetComponent<NPCHealth>().setHealth(100);
                 Destroy(target);
-                GameObject.Find("WPs").GetComponent<HealthController>().removePack();
+                GameObject.Find("HPs").GetComponent<HealthController>().removePack();
             }
         }
 
