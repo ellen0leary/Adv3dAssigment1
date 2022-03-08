@@ -37,11 +37,13 @@
   </PropertyGroup>
   <ItemGroup>
      <Compile Include="Assets\Scripts\Type3.cs" />
+     <Compile Include="Assets\Scripts\AmmoManager.cs" />
      <Compile Include="Assets\Scripts\TeamMember.cs" />
      <Compile Include="Assets\Scripts\Type4.cs" />
      <Compile Include="Assets\Scripts\Type2.cs" />
      <Compile Include="Assets\Scripts\NPCHealth.cs" />
      <Compile Include="Assets\Scripts\Grande.cs" />
+     <Compile Include="Assets\Scripts\HealthController.cs" />
      <Compile Include="Assets\Scripts\LeaderAttack.cs" />
      <Compile Include="Assets\Scripts\controlGranade.cs" />
      <Compile Include="Assets\Scripts\BreadCrumb.cs" />
@@ -52,9 +54,7 @@
      <Compile Include="Assets\Scripts\NPCAmmo.cs" />
      <Compile Include="Assets\Scripts\AmmoController.cs" />
      <Compile Include="Assets\Scripts\WPNavigation.cs" />
-     <Compile Include="Assets\HealthController.cs" />
-     <Compile Include="Assets\AmmoManager.cs" />
-     <Compile Include="Assets\EmeniesController.cs" />
+     <Compile Include="Assets\Scripts\EmeniesController.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
