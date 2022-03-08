@@ -24,4 +24,9 @@ public class AmmoManager : MonoBehaviour
             currentPacks++;
         }
     }
+
+    public void removePack()
+    {
+        currentPacks--;
+    }
 }
