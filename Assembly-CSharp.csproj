@@ -55,6 +55,7 @@
      <Compile Include="Assets\Scripts\AmmoController.cs" />
      <Compile Include="Assets\Scripts\WPNavigation.cs" />
      <Compile Include="Assets\Scripts\EmeniesController.cs" />
+     <Compile Include="Assets\Scripts\PLayerCollide.cs" />
     <Reference Include="UnityEngine">
         <HintPath>C:\Program Files\Unity\Hub\Editor\2020.3.26f1\Editor\Data\Managed\UnityEngine\UnityEngine.dll</HintPath>
     </Reference>
