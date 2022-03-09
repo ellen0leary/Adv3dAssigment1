@@ -62,8 +62,8 @@ public class Leader : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.G)){
                 //shoot
                 print("shooting now");
-                GameObject g = Instantiate(ammo, new Vector3(transform.position.x + 0.2f, transform.position.y + 1, transform.position.z), Quaternion.identity);
-                g.GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 5, ForceMode.Impulse);
+                GameObject g = Instantiate(ammo, new Vector3(transform.position.x + 0.2f, transform.position.y + 0.25f, transform.position.z), Quaternion.identity);
+                g.GetComponent<Rigidbody>().AddForce(transform.forward * 5, ForceMode.Impulse);
             }
         }
         else

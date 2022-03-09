@@ -5,7 +5,7 @@ using UnityEngine.AI;
 public class NPCHealth : MonoBehaviour
 {
     Animator anim;
-    float health = 100;
+    public float health = 100;
     // Start is called before the first frame update
     void Start()
     {
@@ -31,6 +31,12 @@ public class NPCHealth : MonoBehaviour
     public void setHealth(float newHealth)
     {
         health = newHealth;
+        // anim.SetFloat("Health", health);
+    }
+
+    public void changeHealth(float change)
+    {
+        health -= change;
         // anim.SetFloat("Health", health);
     }
 }

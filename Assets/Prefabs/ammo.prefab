@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 962620734238666928}
   - component: {fileID: 7995565202474765415}
   - component: {fileID: 216402062517066051}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: ammo
   m_TagString: BC
   m_Icon: {fileID: 0}

@@ -51,6 +51,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3483227318089619038, guid: 82cece5aa309cfb4aaf7f1a7262b08e8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1de629a161b2e0141be835933ca8bdb8, type: 2}
     - target: {fileID: 919132149155446097, guid: 82cece5aa309cfb4aaf7f1a7262b08e8, type: 3}
       propertyPath: m_Name
       value: Team Member Variant
@@ -59,6 +63,10 @@ PrefabInstance:
       propertyPath: m_TagString
       value: teamMember
       objectReference: {fileID: 0}
+    - target: {fileID: 4058854842844121882, guid: 82cece5aa309cfb4aaf7f1a7262b08e8, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 1de629a161b2e0141be835933ca8bdb8, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 82cece5aa309cfb4aaf7f1a7262b08e8, type: 3}
 --- !u!1 &3966691177139425356 stripped
@@ -96,6 +104,20 @@ CapsuleCollider:
   m_Height: 1.8475863
   m_Direction: 1
   m_Center: {x: -0.0029878616, y: 0.87848204, z: 0}
+--- !u!136 &5970061786029022302
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966691177139425356}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  m_Radius: 0.27946037
+  m_Height: 1.7915378
+  m_Direction: 1
+  m_Center: {x: 0, y: 0.87187886, z: 0.036415756}
 --- !u!95 &4969768872207822214
 Animator:
   serializedVersion: 3
@@ -150,17 +172,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
---- !u!136 &5970061786029022302
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3966691177139425356}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.27946037
-  m_Height: 1.7915378
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.87187886, z: 0.036415756}
