@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using UnityEngine.SceneManagement;
 public class ScoreController : MonoBehaviour
 {
     float timer=180f;
@@ -22,9 +23,14 @@ public class ScoreController : MonoBehaviour
 
         if(score>=10){
             //end game
+            if(SceneManager.GetActiveScene().name=="Level1"){
+                SceneManager.LoadScene("Level2");
+            }else {
+                //get win panel
+            }
             print("game won");
         }else if(timer<0){
-            //end game
+            //get end panel
             print("out of time");
         }
     }

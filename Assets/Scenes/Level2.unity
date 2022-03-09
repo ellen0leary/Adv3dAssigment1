@@ -122,7 +122,7 @@ NavMeshSettings:
     preserveTilesOutsideBounds: 0
     debug:
       m_Flags: 0
-  m_NavMeshData: {fileID: 23800000, guid: 5e28ad1b0a3ce4e48b9af439f0f58522, type: 2}
+  m_NavMeshData: {fileID: 23800000, guid: e16aba239c0192e4281a4f1fb0f87000, type: 2}
 --- !u!4 &17484771 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4343532962594294518, guid: 0cccdcaf83409d54184c47220991e234, type: 3}
@@ -4949,70 +4949,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!1 &1543876746 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1461373039471489540, guid: a4b9dbfcd4bfd0b40a016f192f6e5710, type: 3}
-  m_PrefabInstance: {fileID: 1461373038733018157}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1543876747
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543876746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 42687bfd2975e124b8da9dd99b7ac708, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!95 &1543876748
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543876746}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1543876749
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543876746}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6dd9f90fcfaa03d4fa1324d222c7a16c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {x: 0, y: 0, z: 0}
-  ammo: {fileID: 648665160026534789, guid: 725a107ad8729bc4e88f1ce8cff1b051, type: 3}
---- !u!136 &1543876754
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1543876746}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5
-  m_Height: 1.8850758
-  m_Direction: 1
-  m_Center: {x: 0, y: -0.053732872, z: 0}
 --- !u!1 &1609032951
 GameObject:
   m_ObjectHideFlags: 0
@@ -7223,14 +7159,6 @@ PrefabInstance:
     - target: {fileID: 1461373039471489540, guid: a4b9dbfcd4bfd0b40a016f192f6e5710, type: 3}
       propertyPath: m_Name
       value: player
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461373039471489540, guid: a4b9dbfcd4bfd0b40a016f192f6e5710, type: 3}
-      propertyPath: m_Layer
-      value: 7
-      objectReference: {fileID: 0}
-    - target: {fileID: 1461373039471489542, guid: a4b9dbfcd4bfd0b40a016f192f6e5710, type: 3}
-      propertyPath: m_Layer
-      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a4b9dbfcd4bfd0b40a016f192f6e5710, type: 3}
