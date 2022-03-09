@@ -28,6 +28,12 @@ public class NPC : MonoBehaviour
 
     void destroyNPC()
     {
+        if(this.gameObject.tag == "teamMember"){
+            GameObject[] emenoes = GameObject.FindGameObjectsWithTag("team2");
+            foreach(GameObject enem in emenoes){
+                enem.GetComponent<Animator>().SetBool("targetDestroyed", true);
+            }
+        }
         Destroy(gameObject);
     }
     // Update is called once per frame

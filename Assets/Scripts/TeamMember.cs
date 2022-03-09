@@ -11,18 +11,25 @@ public class TeamMember : MonoBehaviour
     float distanceToLeader;
     public GameObject target;
     float distanceToTarget;
+    int damage ;
     // Start is called before the first frame update
     void Start()
     {
         anim = GetComponent<Animator>();
         if (gameObject.tag == "teamMember") leader = GameObject.Find("player");
         else leader = GameObject.Find("TeamLeader");
+        if (gameObject.tag == "teamMember") damage = 10;
+        else damage = 30;
     }
 
     // Update is called once per frame
     void Update()
     {
         info = anim.GetCurrentAnimatorStateInfo(0);
+        if(leader == null){
+            // disperce
+            return;
+        }
         distanceToLeader = Vector3.Distance(leader.transform.position, transform.position);
         if (distanceToLeader < 3.0f)
         {
@@ -41,6 +48,7 @@ public class TeamMember : MonoBehaviour
         }
         if (info.IsName("MoveTowardsLeader"))
         {
+            anim.SetBool("targetDestroyed", false);
             GetComponent<NavMeshAgent>().SetDestination(leader.transform.position);
             GetComponent<NavMeshAgent>().isStopped = false;
         }
@@ -72,11 +80,11 @@ public class TeamMember : MonoBehaviour
                 gameObject.transform.LookAt(target.transform);
                 if (info.normalizedTime % 1.0 >= .98)
                 {
-                    int damage;
-                    if (gameObject.tag == "team2") damage = 10;
-                    else damage = 20;
+                    // int damage;
+                    // if (gameObject.tag == "team2") damage = 10;
+                    // else damage = 20;
                     target.GetComponent<NPC>().hitByOpponet(gameObject, damage);
-                    if (target != null) target.GetComponent<NPC>().changeHealth(-20);
+                    if (target != null) target.GetComponent<NPC>().changeHealth(-damage);
                     else anim.SetBool("targetDestroyed", true);
                 }
             }
