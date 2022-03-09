@@ -1,15 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using TMPro;
 public class ScoreController : MonoBehaviour
 {
     float timer=180f;
-    float score=0;
+    int score=0;
     // Start is called before the first frame update
     void Start()
     {
-        
+        GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().SetText("Score " + score.ToString());
+        GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>().SetText("Time : " + ((int)timer).ToString());
     }
 
     // Update is called once per frame
@@ -17,6 +18,7 @@ public class ScoreController : MonoBehaviour
     {
         timer -= Time.deltaTime;
         //set timer on cavas
+        GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>().SetText("Time : " + ((int)timer).ToString());
 
         if(score>=10){
             //end game
@@ -31,6 +33,7 @@ public class ScoreController : MonoBehaviour
     public void updateScore(){
         score++;
         print(score);
+        GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().SetText("Score " + score.ToString());
         //add to canvas
     }
 }

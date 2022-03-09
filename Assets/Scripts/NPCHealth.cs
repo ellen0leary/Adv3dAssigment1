@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
+using TMPro;
 public class NPCHealth : MonoBehaviour
 {
     Animator anim;
@@ -18,6 +19,10 @@ public class NPCHealth : MonoBehaviour
         setHealth(health - Time.deltaTime * 0.10f);
         // anim.SetFloat("Health", health);
         // print(health);
+        if (this.gameObject.name == "player")
+        {
+            GameObject.Find("HealthText").GetComponent<TextMeshProUGUI>().SetText("Health " + ((int)health).ToString());
+        }
         if (health < 0) {
             GetComponent<NavMeshAgent>().isStopped = true;
             Destroy(gameObject, 3);
