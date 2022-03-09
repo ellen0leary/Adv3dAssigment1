@@ -1331,10 +1331,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1295537099, guid: 7e71b6d0cade0234f98b1abb2b682cf6, type: 3}
-      propertyPath: m_Controller
-      value: 
-      objectReference: {fileID: 9100000, guid: 128ffe500b3b88b46a28c687409b1f2d, type: 2}
     - target: {fileID: 7441799661941069980, guid: 7e71b6d0cade0234f98b1abb2b682cf6, type: 3}
       propertyPath: m_RootOrder
       value: 8
@@ -1382,10 +1378,6 @@ PrefabInstance:
     - target: {fileID: 7785956234887086630, guid: 7e71b6d0cade0234f98b1abb2b682cf6, type: 3}
       propertyPath: m_Name
       value: TeamLeader
-      objectReference: {fileID: 0}
-    - target: {fileID: 7785956234887086630, guid: 7e71b6d0cade0234f98b1abb2b682cf6, type: 3}
-      propertyPath: m_TagString
-      value: teamMember
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e71b6d0cade0234f98b1abb2b682cf6, type: 3}

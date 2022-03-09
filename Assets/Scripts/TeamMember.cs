@@ -26,7 +26,6 @@ public class TeamMember : MonoBehaviour
         distanceToLeader = Vector3.Distance(leader.transform.position, transform.position);
         if (distanceToLeader < 3.0f)
         {
-            print("close to leader");
             anim.SetBool("closeToLeader", true);
             GetComponent<NavMeshAgent>().isStopped = true;
             GetComponent<NavMeshAgent>().SetDestination(transform.position);
@@ -34,7 +33,6 @@ public class TeamMember : MonoBehaviour
         else
         {
             anim.SetBool("closeToLeader", false);
-            print("not close to leader");
         }
 
         if (info.IsName("idle"))

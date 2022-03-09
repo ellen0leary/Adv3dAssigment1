@@ -73,7 +73,6 @@ public class Leader : MonoBehaviour
             }
             if (info.IsName("Patrol"))
             {
-                print("patrol");
                 detectEmemies();
                 if (Vector3.Distance(transform.position, WPs[WPIndex].transform.position) < 1.0f)
                 {
@@ -81,7 +80,6 @@ public class Leader : MonoBehaviour
                     if (WPIndex > 3) WPIndex = 0;
                 }
                 target = WPs[WPIndex].transform.position;
-                print(transform.position + " - "  +WPs[WPIndex].transform.position );
                 GetComponent<NavMeshAgent>().SetDestination(WPs[WPIndex].transform.position);
                 GetComponent<NavMeshAgent>().isStopped = false;
             }
@@ -98,7 +96,7 @@ public class Leader : MonoBehaviour
 
     void detectEmemies()
     {
-        if (Vector3.Distance(transform.position, player.transform.position) > 10f){ 
+        if (Vector3.Distance(transform.position, player.transform.position) <10f){ 
             anim.SetTrigger("closeToEmeny");
         }
     }
