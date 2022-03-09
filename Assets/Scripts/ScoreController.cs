@@ -5,7 +5,7 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class ScoreController : MonoBehaviour
 {
-    float timer=10f;
+    float timer=180f;
     int score=0;
     GameObject timerOverPanel;
     // Start is called before the first frame update
