@@ -16,6 +16,7 @@ public class Leader : MonoBehaviour
     int WPIndex; 
     GameObject[] WPs;
     GameObject player;
+    public GameObject ammo;
 
     // Start is called before the first frame update
     void Start()
@@ -58,6 +59,12 @@ public class Leader : MonoBehaviour
                 print("retreating");
                 retreat();
             }
+            if(Input.GetKeyDown(KeyCode.G)){
+                //shoot
+                print("shooting now");
+                GameObject g = Instantiate(ammo, new Vector3(transform.position.x + 0.2f, transform.position.y + 1, transform.position.z), Quaternion.identity);
+                g.GetComponent<Rigidbody>().AddForce(transform.rotation * Vector3.forward * 5, ForceMode.Impulse);
+            }
         }
         else
         {
@@ -86,6 +93,17 @@ public class Leader : MonoBehaviour
         }
     }
 
+    // private void FixedUpdate() {
+    //     if(gameObject.name=="player"){
+    //         if (Input.GetKeyDown(KeyCode.G))
+    //         {
+    //             //shoot
+    //             print("shooting now");
+    //             GameObject g = Instantiate(ammo, new Vector3(transform.position.x + 0.2f, transform.position.y + 1, transform.position.z), Quaternion.identity);
+    //             g.GetComponent<Rigidbody>().AddForce(transform.rotation*Vector3.forward * 1000, ForceMode.Impulse);
+    //         }
+    //     }
+    // }
     void retreat()
     {
         for (int i = 0; i < nbTeamMembers; i++)
