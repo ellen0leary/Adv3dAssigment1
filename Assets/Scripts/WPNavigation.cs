@@ -62,6 +62,9 @@ public class WPNavigation : MonoBehaviour
         }
         int ammos = GetComponent<AmmoController>().getAmmo();
         anim.SetInteger("Ammo", ammos);
+
+        float health = GetComponent<NPCHealth>().getHealth();
+        anim.SetFloat("Health", health);
         smell();
         look();
         listen();

@@ -10,14 +10,14 @@ public class NPCHealth : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         setHealth(health - Time.deltaTime * 0.10f);
-        // anim.SetFloat("Health", health);
+        anim.SetFloat("Health", health);
         // print(health);
         if (this.gameObject.name == "player")
         {
@@ -36,12 +36,12 @@ public class NPCHealth : MonoBehaviour
     public void setHealth(float newHealth)
     {
         health = newHealth;
-        // anim.SetFloat("Health", health);
+        anim.SetFloat("Health", health);
     }
 
     public void changeHealth(float change)
     {
         health -= change;
-        // anim.SetFloat("Health", health);
+        anim.SetFloat("Health", health);
     }
 }

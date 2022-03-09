@@ -12,6 +12,7 @@ TagManager:
   - teamMember
   - team2
   - coll
+  - type4
   layers:
   - Default
   - TransparentFX

@@ -5,13 +5,17 @@ using TMPro;
 using UnityEngine.SceneManagement;
 public class ScoreController : MonoBehaviour
 {
-    float timer=180f;
+    float timer=10f;
     int score=0;
+    GameObject timerOverPanel;
     // Start is called before the first frame update
     void Start()
     {
         GameObject.Find("ScoreText").GetComponent<TextMeshProUGUI>().SetText("Score " + score.ToString());
         GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>().SetText("Time : " + ((int)timer).ToString());
+        timerOverPanel = GameObject.Find("TimerOverPanel");
+        timerOverPanel.SetActive(false);
+        Time.timeScale = 1;
     }
 
     // Update is called once per frame
@@ -32,6 +36,8 @@ public class ScoreController : MonoBehaviour
         }else if(timer<0){
             //get end panel
             print("out of time");
+            Time.timeScale =0;
+            timerOverPanel.SetActive(true);
         }
     }
 

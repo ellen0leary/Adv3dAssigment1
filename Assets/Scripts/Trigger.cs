@@ -17,6 +17,6 @@ public class Trigger : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.name=="player") GameObject.Find("Type4").GetComponent<Type4>().playerEnteredAmbushArea();
+        if(other.gameObject.name=="player") GameObject.FindGameObjectWithTag("type4").GetComponent<Type4>().playerEnteredAmbushArea();
     }
 }
