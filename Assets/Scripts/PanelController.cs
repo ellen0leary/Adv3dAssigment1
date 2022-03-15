@@ -23,6 +23,7 @@ public class PanelController : MonoBehaviour
     }
 
     public void mainMenu(){
+        print("loading main menu");
         SceneManager.LoadScene(0);
     }
 }

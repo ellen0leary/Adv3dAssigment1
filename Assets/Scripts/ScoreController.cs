@@ -8,6 +8,7 @@ public class ScoreController : MonoBehaviour
     float timer=180f;
     int score=0;
     GameObject timerOverPanel;
+    GameObject gameWinPanel;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +17,9 @@ public class ScoreController : MonoBehaviour
         timerOverPanel = GameObject.Find("TimerOverPanel");
         timerOverPanel.SetActive(false);
         Time.timeScale = 1;
+    
+            gameWinPanel = GameObject.Find("GameDone");
+            gameWinPanel.SetActive(false);
     }
 
     // Update is called once per frame
@@ -31,6 +35,8 @@ public class ScoreController : MonoBehaviour
                 SceneManager.LoadScene("Level2");
             }else {
                 //get win panel
+                gameWinPanel.SetActive(true);
+                Time.timeScale = 0;
             }
             print("game won");
         }else if(timer<0){

@@ -9,13 +9,20 @@ public class PlayerCollider : MonoBehaviour
             GetComponent<NPCHealth>().setHealth(100);
             Destroy(other.gameObject);
             GameObject.Find("HPs").GetComponent<HealthController>().removePack();
-        } else if (other.gameObject.tag == "coll"){
+        }else if (other.gameObject.tag == "coll")
+        {
             Destroy(other.gameObject);
+            other.gameObject.GetComponent<Collider>().enabled= false;
             GameObject.Find("ScoreController").GetComponent<ScoreController>().updateScore();
-        } else if(other.gameObject.tag== "ammo"){
+        }  
+        else if(other.gameObject.tag== "ammo"){
             GetComponent<AmmoController>().setAmmo(100);
             Destroy(other.gameObject);
             GameObject.Find("APs").GetComponent<AmmoManager>().removePack();
         }
+    }
+
+    private void OnTriggerEnter(Collider other) {
+        
     }
 }
